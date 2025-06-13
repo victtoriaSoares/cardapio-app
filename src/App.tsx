@@ -1,16 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from "./componetes/Home";
-import DetalhesPrato from "./componetes/DetalhesPrato";
+import "./estilos/FormularioPrato.css"; // Importando o CSS específico para o componente
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/detalhes-prato/:id" element={<DetalhesPrato />} />
-      </Routes>
-    </Router>
+    <>
+      <div className="form-container">
+        <h1>Cadastro de Pratos</h1>
+        <p>Bem-vindo ao sistema de cadastro de pratos!</p>
+        <input type="text" name="nome" placeholder="Digite o nome do prato" />
+        <input type="text" name="cozinha" placeholder="Digite o tipo de cozinha do prato" />
+        <input type="text" name="descricao-resumida" placeholder="Digite a descrição resumida do prato" />
+        <input type="text" name="descricao-detalhada" placeholder="Digite a descrição detalhada do prato" />
+        <input type="text" name="imagem" placeholder="Digite a url da imagem do prato" />
+        <input type="text" name="valor" placeholder="Digite o valor do prato" />
+        <button type="submit">Cadastrar Prato</button>
+      </div>
+    </>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/detalhes-prato/:id" element={<DetalhesPrato />} />
+    //   </Routes>
+    // </Router>
   );
 }
 
