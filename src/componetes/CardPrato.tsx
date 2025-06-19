@@ -1,7 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import "../estilos/CardPrato.css";
 
-const CardPrato = () => {
+interface CardPratoProps {
+  nome: string;
+  cozinha: string;
+  descricaoCurta: string;
+  imagem: string;
+}
+
+const CardPrato: FC<CardPratoProps> = (props) => {
   return (
     <>
       <div className="prato-card">
@@ -22,15 +29,12 @@ const CardPrato = () => {
           </div>
         </div>
         <img
-          src="https://media.istockphoto.com/id/899497396/pt/foto/delicious-brazilian-feijoada.jpg?s=2048x2048&w=is&k=20&c=OO_JGRT2AgsybJxSFB-mFP2vsOn7QtsbqEd1sZiUzuw="
+          src={props.imagem}
           alt="Feijoada brasileira"
         />
-        <h2 className="nome-prato">Feijoada</h2>
-        <p className="cozinha-prato">Brasileira</p>
-        <p className="descricao-curta-prato">
-          Feijoada completa, com pedaços suculentos de carne suína e aquele
-          sabor brasileiro incomparável.
-        </p>
+        <h2 className="nome-prato">{props.nome}</h2>
+        <p className="cozinha-prato">{props.cozinha}</p>
+        <p className="descricao-curta-prato">{props.descricaoCurta}</p>
         <a href="#" className="btn">
           Ver Detalhes
         </a>
